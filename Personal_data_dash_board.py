@@ -41,6 +41,7 @@ def add_entries():
 
 
 def view_entries():
+    load_data()
     print("Showing all entries..")
     if not data:
         print("No entries found.")
@@ -50,6 +51,7 @@ def view_entries():
     print()
 
 def find_entries():
+    load_data()
     name = input("tell me the name: ").lower().strip()
     found = False
     for entity in data:
@@ -61,6 +63,7 @@ def find_entries():
         print("The entered name not found..!")
 
 def del_entries():
+    load_data()
     name = input("Tell me the name for which you wnt to delete the entries: ").strip()
     for i,entity in enumerate(data):
         if (entity["name"].lower() == name.lower()):
